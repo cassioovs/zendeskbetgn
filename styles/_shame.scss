@@ -1,0 +1,54 @@
+// shame - for styles that haven't yet found their place
+
+/* make ticket follow-up start on a new line in new request heading */
+.follow-up-hint {
+  display: block;
+}
+
+/* anchor.js links for headings */
+.anchor-links {
+  padding-left: 0 !important;
+  margin-left: 0.2em !important;
+}
+
+/* copy code to clipboard button */
+.code-copy-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  cursor: pointer;
+  padding: 2px 4px;
+  background-color: transparent;
+  opacity: 0.6;
+  font-size: 80%;
+  color: $text-color;
+}
+
+.code-copy-button:hover,
+.code-copy-button:active {
+  opacity: 1;
+}
+
+.code-copy-button:focus {
+  outline: 0;
+}
+
+/* for responsive article video embed */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

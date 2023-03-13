@@ -1,0 +1,81 @@
+/* Sidebar navigation that collapses on mobile */
+.collapsible-sidebar {
+  @include desktop {
+    max-height: none;
+    padding: 0;
+  }
+  flex: 1;
+  max-height: 45px;
+  overflow: hidden;
+  padding: 10px 0;
+  position: relative;
+
+  &-title {
+    margin-top: 0;
+    font-size: $font-size-base;
+
+    @include desktop {
+      margin: 16px 0 0;
+      font-size: $font-size-bigger;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  &-toggle {
+    @include desktop {
+      display: none;
+    }
+    position: absolute;
+    top: calc(45px / 2);
+    transform: translateY(-50%);
+    right: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: $text-color;
+
+    [dir='rtl'] & {
+      left: 0;
+      right: auto;
+    }
+
+    &-icon {
+      display: none;
+    }
+
+    &[aria-expanded='false'] {
+      .chevron-icon {
+        display: inline-block;
+      }
+    }
+
+    &[aria-expanded='true'] {
+      .x-icon {
+        display: inline-block;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $brand-color;
+    }
+  }
+
+  &-body {
+    @include desktop {
+      display: block;
+    }
+    display: none;
+  }
+
+  &[aria-expanded='true'] {
+    max-height: none;
+
+    .collapsible-sidebar-body {
+      display: block;
+    }
+  }
+}

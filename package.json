@@ -1,0 +1,21 @@
+{
+  "name": "zendesk-theme",
+  "version": "3.0.4",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm:preview\" \"npm:styles:watch\"",
+    "build": "npm run styles:build",
+    "preview": "zat theme preview",
+    "prettier:check": "prettier --check \"./**/*.{js,json,scss,md}\"",
+    "prettier:write": "prettier --write \"./**/*.{js,json,scss,md}\"",
+    "styles:watch": "sass styles/index.scss:style.css --watch",
+    "styles:build": "sass styles/index.scss:style.css --style compressed && postcss style.css --use autoprefixer --replace --no-map"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "concurrently": "^6.3.0",
+    "postcss-cli": "^9.0.1",
+    "prettier": "^2.4.1",
+    "sass": "^1.43.2"
+  }
+}

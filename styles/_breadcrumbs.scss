@@ -1,0 +1,23 @@
+/***** Breadcrumbs *****/
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+
+  li {
+    color: $secondary-text-color;
+    display: inline;
+    font-weight: $font-weight-base;
+    font-size: $font-size-navigation;
+    max-width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    + li::before {
+      content: '/';
+      margin: 0 4px;
+    }
+    a:visited {
+      color: $link_color;
+    }
+  }
+}

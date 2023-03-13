@@ -1,0 +1,18 @@
+<div class="container container-spacing">
+  <nav class="sub-nav">{{breadcrumbs}}</nav>
+
+  <div class="form">
+    <header class="form-header">
+      <h1 class="form-header-heading">
+        {{t 'submit_a_request'}}
+        {{#if follow_up}}
+        <span class="follow-up-hint">{{follow_up}}</span>
+        {{/if}}
+      </h1>
+      <p class="form-header-description">
+        Technical issues, questions, feedback, warranty claims, fill out the form to get in touch with a human.
+      </p>
+    </header>
+    {{request_form}}
+  </div>
+</div>

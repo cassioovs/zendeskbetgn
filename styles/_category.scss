@@ -1,0 +1,84 @@
+/***** Category pages *****/
+.category {
+  &-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &-content {
+    @include desktop {
+      flex: 0 0 100%;
+    }
+
+    flex: 1;
+  }
+}
+
+.section-tree {
+  @include tablet {
+    flex-direction: row;
+  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+
+  .section {
+    @include tablet {
+      flex: 0 0 45%;
+    } /* Two columns for tablet and desktop. Leaving 5% separation between columns */
+    flex: initial;
+  }
+
+  &-title {
+    margin-bottom: 0px;
+    padding-bottom: 6px;
+    font-size: 22px;
+    font-weight: $font-weight-semibold;
+    border-bottom: 1px solid $border-color;
+
+    a {
+      color: $text-color;
+    }
+  }
+}
+
+.article-list {
+  list-style: disc;
+  padding: 0 20px;
+  margin: 0px 0 16px 12px;
+
+  &-item {
+    font-size: $font-size-bigger;
+    padding: 8px 0;
+    position: relative;
+
+    &:first-child {
+      margin-top: 8px;
+    }
+
+    a {
+      color: $text-color;
+    }
+  }
+}
+
+.see-all-articles {
+  padding: 6px 12px;
+  margin-left: 12px;
+  border-radius: $border-radius;
+  background-color: $brand-color;
+  color: $brand-text-color;
+}
+
+.article-promoted {
+  list-style: none;
+}
+
+.icon-star {
+  font-size: 18px;
+  position: absolute;
+  left: -20px;
+  top: 16px;
+}

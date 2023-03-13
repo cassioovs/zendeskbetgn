@@ -1,0 +1,63 @@
+/***** Hero component *****/
+.hero {
+  background-position: center;
+  background-size: cover;
+  padding: 0 5%;
+  text-align: center;
+  width: 100%;
+  margin-top: -$header-height;
+  height: 80vh;
+
+  &::before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    content: '';
+    opacity: 0.75;
+    background-color: $text-color;
+    background-image: linear-gradient(-10deg, $brand-color 00%, $background-color 60%);
+    max-height: 80vh;
+  }
+
+  &-inner {
+    @include vertical-align;
+    max-width: $max-width-container;
+    margin: 0 auto;
+    z-index: 2;
+    color: white;
+
+    & a {
+      color: $text-color;
+      font-weight: $font-weight-semibold;
+      text-decoration: underline;
+    }
+
+    & a:hover,
+    & a:focus,
+    & a:active {
+      color: $brand-color;
+    }
+
+    &-heading {
+      font-weight: $font-weight-semibold;
+      margin-bottom: 16px;
+
+      @media (min-width: 580px) {
+        font-size: 48px;
+      }
+    }
+
+    &-search {
+      max-width: $column-width;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    &-description {
+      font-size: $font-size-base;
+    }
+  }
+}

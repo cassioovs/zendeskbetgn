@@ -1,0 +1,164 @@
+/***** Forms *****/
+.form {
+  max-width: $column-width;
+
+  &-header {
+    margin-bottom: 30px;
+
+    &-heading {
+      font-weight: $font-weight-semibold;
+      margin: 0;
+
+      @media (min-width: $tablet-width) {
+        font-size: 48px;
+      }
+    }
+    &-description {
+      color: $secondary-text-color;
+    }
+  }
+}
+
+.form-field ~ .form-field {
+  margin-top: 25px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 10px;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid $brand-color;
+  }
+}
+
+.form-field input[type='text'] {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  &:focus {
+    border: 1px solid $brand-color;
+  }
+}
+
+.form-field input[type='checkbox'] {
+  width: auto;
+}
+
+// Select box
+.form-field .nesty-input {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  vertical-align: middle;
+  background-color: transparent;
+  color: $text-color;
+
+  &:focus {
+    border: 1px solid $brand-color;
+    text-decoration: none;
+  }
+}
+
+.form-field .hc-multiselect-toggle:focus {
+  outline: none;
+  border: 1px solid $brand-color;
+  text-decoration: none;
+}
+
+.form-field textarea {
+  vertical-align: middle;
+}
+
+.form-field input[type='checkbox'] + label {
+  margin: 0 0 0 10px;
+}
+
+.form-field .optional {
+  color: $secondary-text-color;
+  margin-left: 4px;
+}
+
+.form-field p {
+  color: $secondary-text-color;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.form footer {
+  padding-top: 30px;
+}
+
+.form footer a {
+  color: $secondary-text-color;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.form .suggestion-list {
+  font-size: $font-size-small;
+  margin-top: 30px;
+
+  label {
+    border-bottom: 1px solid $border-color;
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  li {
+    padding: 10px 0;
+  }
+}
+
+.form ul[data-hc-pills-container] {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background: transparent;
+
+  &[data-hc-focus='true'] {
+    border-color: $input-focus-color;
+  }
+
+  & li[data-hc-pill='true'] {
+    background: transparent;
+
+    &[aria-invalid='true'] {
+      border: 1px solid $red-color;
+    }
+  }
+}
+
+.upload-dropzone {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 18px 0;
+
+  &[data-hc-focus='true'] {
+    border-color: $input-focus-color;
+  }
+}
+
+.nesty-panel li {
+  background-color: $primary-shade;
+  color: $secondary-text-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $secondary-shade;
+    color: $text-color;
+  }
+}
+
+.nesty-panel li.nesty-selected {
+  background-color: $secondary-shade;
+}

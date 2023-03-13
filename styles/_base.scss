@@ -1,0 +1,226 @@
+/***** Base *****/
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-roobert-light-woff2) format('woff2'),
+    url($assets-roobert-light-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url($assets-roobert-light-italic-woff2) format('woff2'),
+    url($assets-roobert-light-italic-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Roobert';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-roobert-semibold-woff2) format('woff2'),
+    url($assets-roobert-semibold-woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-ibm-plex-mono-light-woff2) format('woff2'),
+    url($assets-ibm-plex-mono-light-woff) format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url($assets-ibm-plex-mono-bold-woff2) format('woff2'),
+    url($assets-ibm-plex-mono-bold-woff) format('woff');
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $grey06-color;
+  background-image: linear-gradient(350deg, $brand-color -300%, $grey06-color 40%);
+  color: $text-color;
+  font-family: $text-font;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  > main {
+    min-height: calc(100vh - $header-height);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+  font-weight: $font-weight-base;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: $font-weight-semibold;
+}
+h4 {
+  font-size: 16px;
+}
+
+a {
+  color: $link_color;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+b,
+strong {
+  font-weight: $font-weight-semibold;
+}
+
+::selection {
+  background-color: $brand-color;
+  color: $background-color;
+}
+
+input,
+textarea,
+select {
+  color: $text-color;
+  font-size: $font-size-base;
+  background-color: transparent;
+  font-family: $text-font;
+}
+
+input {
+  font-weight: $font-weight-light;
+  max-width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.12s ease-in-out;
+
+  &:focus {
+    border: 1px solid $brand-color;
+  }
+}
+
+input[disabled] {
+  background-color: #ddd;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23CCC' d='M0 0h10L5 6 0 0z'/%3E%3C/svg%3E%0A")
+    no-repeat;
+  background-position: right 10px center;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 8px 30px 8px 10px;
+  outline: none;
+  color: $secondary-text-color;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid $input-focus-color;
+  }
+
+  option {
+    background-color: $primary-shade;
+    color: $text-color;
+  }
+}
+
+textarea {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  resize: vertical;
+  width: 100%;
+  outline: none;
+  padding: 10px;
+
+  &:focus {
+    border: 1px solid $input-focus-color;
+  }
+}
+
+.container {
+  @include max-width-container;
+
+  &-spacing {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+}
+
+.container-divider {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.error-page {
+  &-heading {
+    font-size: 38px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet-width) {
+      font-size: 48px;
+    }
+  }
+
+  &-status-code {
+    font-family: $mono-font;
+  }
+}
+
+.visibility-hidden {
+  @include visually-hidden;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: initial;
+}
+.dropdown-toggle:focus {
+  text-decoration: underline;
+}
+
+.dropdown-toggle::after {
+  color: inherit;
+}

@@ -1,0 +1,209 @@
+/***** Header *****/
+@use 'sass:math';
+
+.header {
+  position: relative;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  height: $header-height;
+  justify-content: space-between;
+  z-index: 200;
+  padding: 0 5%;
+  background-color: $background-color;
+}
+
+.header a,
+.header button {
+  font-weight: 600;
+  color: $text-color;
+  fill: $text-color;
+  stroke: $text-color;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: transparent;
+    color: $brand-color;
+    fill: $brand-color;
+    stroke: $brand-color;
+    text-decoration: none;
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+
+  &-image {
+    line-height: 0;
+
+    svg {
+      height: 24px;
+    }
+  }
+
+  &-title {
+    display: inline-block;
+    font-size: 20px;
+    border-left: 1px solid $text-color;
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+}
+
+.header-desktop-search {
+  position: relative;
+  max-width: math.div($max-width-container, 2);
+  width: 100%;
+  background-color: $background-color;
+  margin: 0 20px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.header-desktop-menu {
+  display: flex;
+  align-items: center;
+
+  @include mobile {
+    display: none;
+  }
+
+  a {
+    @include tablet {
+      display: inline-block;
+    }
+
+    border: 0;
+    display: none;
+    margin: 0 20px 0 0;
+    width: auto;
+
+    [dir='rtl'] & {
+      margin: 0 0 0 20px;
+    }
+
+    &.sign-in {
+      display: inline-block;
+      margin: 0;
+      white-space: nowrap;
+    }
+  }
+
+  .user-nav {
+    @include tablet {
+      position: relative;
+    }
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+
+    &[aria-expanded='true'] {
+      background-color: #fff;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15), 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+      border: solid 1px #ddd;
+      right: 0;
+      left: 0;
+      top: $header-height;
+      z-index: 1;
+
+      > a {
+        display: block;
+        margin: 20px;
+      }
+    }
+  }
+}
+
+.header-mobile-menu {
+  display: none;
+  overflow-y: auto;
+  background-color: $background-color;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-bottom: 30px;
+  padding-top: $header-height;
+  margin-top: -$header-height;
+
+  &[aria-expanded='true'] {
+    display: block;
+  }
+
+  &-search {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 12px 0;
+  }
+
+  ul {
+    li {
+      border-radius: $border-radius;
+      margin-bottom: 10px;
+      padding: 12px 10px;
+
+      button {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      a,
+      button {
+        color: $text-color;
+        font-size: $font-size-bigger;
+        font-weight: $font-weight-semibold;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $brand-color;
+        }
+      }
+    }
+  }
+}
+
+.header-mobile-menu-button {
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: $text-color;
+  cursor: pointer;
+
+  @include tablet {
+    display: none;
+  }
+
+  svg {
+    display: none;
+  }
+
+  &[aria-expanded='false'] {
+    .menu-icon {
+      display: inline-block;
+    }
+  }
+
+  &[aria-expanded='true'] {
+    .x-icon {
+      display: inline-block;
+    }
+  }
+}
+
+.no-scroll {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  position: fixed;
+}

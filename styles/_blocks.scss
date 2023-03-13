@@ -1,0 +1,95 @@
+/***** Blocks *****/
+/* Used in Homepage#categories and Community#topics */
+.blocks {
+  &-list {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+
+    @include tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &-item {
+    border: 1px solid $brand-color;
+    border-radius: $border-radius;
+    color: $text-color;
+    min-height: 120px;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $brand-color;
+
+      * {
+        color: $brand-text-color;
+        text-decoration: none;
+      }
+    }
+
+    &-internal {
+      background-color: transparent;
+      border: 1px solid $border-color;
+
+      .icon-lock {
+        height: 15px;
+        width: 15px;
+        bottom: 5px;
+        position: relative;
+      }
+
+      a {
+        color: $text-color;
+      }
+    }
+  }
+
+  &-item-link {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+    color: $text-color;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+
+    &:focus {
+      background-color: $brand-color;
+      color: $brand-text-color;
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  &-item-title {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: $font-weight-light;
+    font-family: $mono-font;
+  }
+
+  &-item-description {
+    margin: 0;
+  }
+
+  &-item-description:not(:empty) {
+    margin-top: 10px;
+  }
+}
