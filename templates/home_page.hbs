@@ -1,22 +1,19 @@
 <section class="hero hero-large home-hero">
   <div class="hero-inner">
-    <h1 class="hero-inner-heading">Hi. How can we help?</h1>
+    <h1 class="hero-inner-heading">Olá, como podemos ajudá-lo(a)?</h1>
     <div class="hero-inner-search search search-full">
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon"
         aria-hidden="true">
         <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
         <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
       </svg>
-      {{search submit=false instant=settings.instant_search placeholder="Search knowledge base..."}}
+      {{search submit=false instant=settings.instant_search placeholder="Procure em nossa base de conhecimento"}}
     </div>
-    <p class="hero-inner-description">
-      <strong>Guides:</strong> getting started with <a href="/hc/en-us/articles/360052707871">Evoko Naso</a> or <a href="/hc/en-us/articles/360014969032">Evoko Liso</a>?
-    </p>
   </div>
 </section>
 
 <section class="container container-spacing home-categories">
-  <h2 class="home-categories-heading" id="browse-knowledge-base">Browse knowledge base</h2>
+  <h2 class="home-categories-heading" id="browse-knowledge-base">Navegue pela Central de Ajuda</h2>
   <ul class="blocks-list">
     {{#each categories}}
     {{#if ../has_multiple_categories}}
